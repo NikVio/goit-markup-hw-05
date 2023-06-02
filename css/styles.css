@@ -60,8 +60,26 @@
   --footer-icon-hover: #31d0aa;
 
   --footer-icon-color: #4d5ae5;
+
+  --tra-speed: 250ms;
+
+  --tra-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 /* Подклассы */
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
 .title {
   text-align: center;
   text-transform: capitalize;
@@ -126,7 +144,6 @@ img {
   width: 1158px;
   padding: 0 15px 0 15px;
   margin: 0 auto;
-  outline: 2px solid green;
 }
 
 /* Header */
@@ -167,27 +184,30 @@ img {
 }
 
 .header-link {
+  position: relative;
   font-weight: 500;
   font-size: 16px;
   line-height: 1.5;
   letter-spacing: 0.02em;
   color: var(--link-color);
   padding: 24px 0;
-  position: relative;
+  transition-property: color;
+  transition: color var(--tra-speed) var(--tra-function);
 }
 
 .header-link::after {
+  position: absolute;
   content: "";
   width: 48px;
   height: 4px;
   border-radius: 2px;
   background-color: var(--link-hover-color);
-  position: absolute;
+
   width: 100%;
   bottom: 0px;
   right: 0px;
   transform: scaleX(0);
-  transition: transform 250ms linear;
+  transition: transform var(--tra-speed) var(--tra-function);
 }
 
 .header-link:hover,
@@ -224,6 +244,8 @@ img {
   display: block;
 
   padding: 24px 0;
+
+  transition: color var(--tra-speed) var(--tra-function);
 }
 
 .address:hover,
@@ -231,10 +253,9 @@ img {
   color: var(--address-hover-color);
 }
 
-/* hero */
+/* Hero */
 
 .hero {
-  outline: 2px solid red;
   max-width: 1440px;
   margin-left: auto;
   margin-right: auto;
@@ -276,6 +297,7 @@ img {
   border: none;
   margin: 0 auto;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  transition: background-color var(--tra-speed) var(--tra-function);
 }
 
 .hero-btn:hover,
@@ -284,19 +306,6 @@ img {
 }
 
 /* Section */
-
-.visually-hidden {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  margin: -1px;
-  border: 0;
-  padding: 0;
-  white-space: nowrap;
-  clip-path: inset(100%);
-  clip: rect(0 0 0 0);
-  overflow: hidden;
-}
 
 .features {
   padding-bottom: 120px;
@@ -321,9 +330,6 @@ img {
   align-items: center;
   justify-content: center;
   margin-bottom: 8px;
-}
-
-.features-icon {
 }
 
 .features-title {
@@ -422,6 +428,7 @@ img {
   align-items: center;
   justify-content: center;
   color: #f4f4fd;
+  transition: background-color var(--tra-speed) var(--tra-function);
 }
 
 .teamcards-icon {
@@ -463,6 +470,8 @@ img {
   align-items: center;
   justify-content: center;
   color: var(--icon-color);
+  transition: color var(--tra-speed) var(--tra-function),
+    border-color var(--tra-speed) var(--tra-function);
 }
 
 .costumers-icon {
@@ -489,9 +498,6 @@ img {
   margin-bottom: 72px;
 }
 
-.filters-item {
-}
-
 .filters-btn {
   font-family: inherit;
   font-weight: 500;
@@ -504,6 +510,10 @@ img {
   border: 1px solid var(--port-border-btn);
   border-radius: 4px;
   padding: 12px 24px;
+  transition: color var(--tra-speed) var(--tra-function),
+    background-color var(--tra-speed) var(--tra-function),
+    box-shadow var(--tra-speed) var(--tra-function),
+    border var(--tra-speed) var(--tra-function);
 }
 
 .filters-btn:hover,
@@ -530,6 +540,7 @@ img {
 
 .project-link {
   display: block;
+  transition: box-shadow var(--tra-speed) var(--tra-function);
 }
 
 .project-wrap {
@@ -628,6 +639,7 @@ img {
   align-items: center;
   justify-content: center;
   color: #f4f4fd;
+  transition: background-color var(--tra-speed) var(--tra-function);
 }
 
 .footer-icon {
