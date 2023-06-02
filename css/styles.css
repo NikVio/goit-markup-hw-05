@@ -555,6 +555,31 @@ img {
     0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
 }
 
+.project-link:hover .project-cover-text,
+.project-link:focus .project-cover-text {
+  transform: translateY(0);
+}
+
+.project-cover-wrap {
+  position: relative;
+  overflow: hidden;
+}
+
+.project-cover-text {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  padding: 40px 32px;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.02em;
+  color: #f4f4fd;
+  background: #4d5ae5;
+  transform: translateY(100%);
+  transition: transform var(--tra-speed) var(--tra-function);
+}
+
 .project-title {
   margin-bottom: 8px;
 }
