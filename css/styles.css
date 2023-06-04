@@ -724,7 +724,6 @@ img {
 }
 
 .icon-close-modal {
-  fill: #2e2f42;
   transition: fill var(--tra-speed) var(--tra-function);
 }
 
