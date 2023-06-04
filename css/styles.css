@@ -512,7 +512,7 @@ img {
   transition: color var(--tra-speed) var(--tra-function),
     background-color var(--tra-speed) var(--tra-function),
     box-shadow var(--tra-speed) var(--tra-function),
-    border var(--tra-speed) var(--tra-function);
+    border-color var(--tra-speed) var(--tra-function);
 }
 
 .filters-btn:hover,
@@ -718,21 +718,25 @@ img {
   justify-content: center;
   padding: 0;
   cursor: pointer;
-  color: #2e2f42;
+
   transition: background-color var(--tra-speed) var(--tra-function),
-    border var(--tra-speed) var(--tra-function),
-    color var(--tra-speed) var(--tra-function);
+    border var(--tra-speed) var(--tra-function);
 }
 
 .icon-close-modal {
-  fill: currentColor;
+  fill: #2e2f42;
+  transition: fill var(--tra-speed) var(--tra-function);
 }
 
 .close-modal:hover,
 .close-modal:focus {
   background-color: #404bbf;
-  color: #ffffff;
   border: none;
+}
+
+.icon-close-modal:hover,
+.icon-close-modal:focus {
+  fill: #ffffff;
 }
 
 .is-hidden {
