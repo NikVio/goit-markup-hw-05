@@ -732,10 +732,6 @@ img {
 .close-modal:focus {
   background-color: #404bbf;
   border: none;
-}
-
-.icon-close-modal:hover,
-.icon-close-modal:focus {
   fill: #ffffff;
 }
 
