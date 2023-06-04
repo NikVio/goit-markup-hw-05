@@ -575,7 +575,7 @@ img {
   line-height: 1.5;
   letter-spacing: 0.02em;
   color: #f4f4fd;
-  background: #4d5ae5;
+  background-color: #4d5ae5;
   transform: translateY(100%);
   transition: transform var(--tra-speed) var(--tra-function);
 }
@@ -682,35 +682,45 @@ img {
   height: 100%;
   background: rgba(46, 47, 66, 0.4);
   top: 0;
+  transition: opacity var(--tra-speed) var(--tra-function),
+    visibility var(--tra-speed) var(--tra-function);
 }
 
 .modal {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%) scaleY(1);
   width: 408px;
   min-height: 584px;
+  padding: 24px;
   background-color: #fcfcfc;
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 1px 3px rgba(0, 0, 0, 0.12),
     0px 2px 1px rgba(0, 0, 0, 0.2);
   border-radius: 4px;
+  transition: transform var(--tra-speed) var(--tra-function);
+}
+
+.backdrop.is-hidden .modal {
+  transform: translate(-50%, -50%) scaleY(0);
 }
 
 .close-modal {
-  display: block;
-  margin: 24px 24px;
+  width: 24px;
+  height: 24px;
   border-radius: 50%;
   background-color: #e7e9fc;
   border: 1px solid rgba(0, 0, 0, 0.1);
   margin-left: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   color: #2e2f42;
   transition: background-color var(--tra-speed) var(--tra-function),
     color var(--tra-speed) var(--tra-function);
 }
 
 .icon-close-modal {
-  align-items: center;
   fill: currentColor;
 }
 
@@ -718,4 +728,10 @@ img {
 .close-modal:focus {
   background-color: #404bbf;
   color: #ffffff;
+}
+
+.is-hidden {
+  visibility: none;
+  opacity: 0;
+  pointer-events: none;
 }
